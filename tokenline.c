@@ -1125,8 +1125,9 @@ int tl_input(t_tokenline *tl, uint8_t c)
 		if (tl->buf_len == tl->pos)
 			complete(tl);
 		break;
+	case 0x08:
 	case 0x7f:
-		/* Backspace */
+		/* DEL and Backspace */
 		if (tl->pos)
 			line_backspace(tl);
 		break;
